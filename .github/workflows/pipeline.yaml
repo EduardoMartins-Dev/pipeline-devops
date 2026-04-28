@@ -1,0 +1,16 @@
+name: pipeline-CI
+run-name: First pipeline in github action.
+
+on: [push]
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+    test:
+      runs-on: windows-2022
+      steps:
+        - name: Roda um hello ai dog
+          run: echo "Rodou"
