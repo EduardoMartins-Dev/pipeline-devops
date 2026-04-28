@@ -1,7 +1,5 @@
 name: pipeline-CI
-run-name: First pipeline in github action.
-
-on: [push]
+run-name: First pipeline in github action
 
 on:
   push:
@@ -9,8 +7,11 @@ on:
       - main
 
 jobs:
-    test:
-      runs-on: windows-2022
-      steps:
-        - name: Roda um hello ai dog
-          run: echo "Rodou"
+  test:
+    runs-on: windows-2022
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Roda um hello ai dog
+        run: echo "Rodou"
